@@ -422,16 +422,20 @@ $(document).ready(function()
 <div id="wb_Form1" style="position:absolute;left:13px;top:50px;width:795px;height:319px;z-index:12;">
 <form name="PredTar" method="post" action="./Step0.php" enctype="multipart/form-data" id="Form1" onsubmit="return ValidatePredTar(this)">
 <input type="file" id="FileUpload1" style="position:absolute;left:173px;top:83px;width:268px;height:28px;z-index:0;" name="FileUpload1" required="required">
-<input type="text" id="Prob" style="position:absolute;left:174px;top:203px;width:268px;height:28px;line-height:28px;z-index:1;" name="Prob" value="0.85" autocomplete="off">
+<input type="text" id="Prob" style="position:absolute;left:174px;top:203px;width:268px;height:28px;line-height:28px;z-index:1;" name="Prob" value="Dr Phill" autocomplete="off">
 <select name="Mode" size="1" id="Mode" style="position:absolute;left:174px;top:143px;width:270px;height:30px;z-index:2;">
-<option value="2d">2D</option>
-<option selected value="3d">3D</option>
-<option value="combo">2D+3D</option>
+<option selected="selected" value="popc">POPC</option>
+<option value="pope">POPE</option>
+<option value="dppc">DPPC</option>
+<option value="popg">POPG</option>
+<option value="pops">POPS</option>
+<option value="ddm">DDM</option>
+<option value="dppe">DPPE</option>
 </select>
 <div id="wb_Text1" style="position:absolute;left:39px;top:143px;width:124px;height:19px;z-index:3;text-align:left;">
-<span style="color:#000000;font-family:Arial;font-size:16px;">Prediction Mode</span></div>
+<span style="color:#000000;font-family:Arial;font-size:16px;">Type of Lipid</span></div>
 <div id="wb_Text2" style="position:absolute;left:39px;top:203px;width:124px;height:19px;z-index:4;text-align:left;">
-<span style="color:#000000;font-family:Arial;font-size:16px;">Probability</span></div>
+<span style="color:#000000;font-family:Arial;font-size:16px;">Your Name</span></div>
 <div id="wb_Text3" style="position:absolute;left:39px;top:83px;width:124px;height:19px;z-index:5;text-align:left;">
 <span style="color:#000000;font-family:Arial;font-size:16px;">Input File</span></div>
 <input type="email" id="Email" style="position:absolute;left:174px;top:263px;width:268px;height:28px;line-height:28px;z-index:6;" name="Email" value="" required="required">

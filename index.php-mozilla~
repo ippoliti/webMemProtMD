@@ -1,0 +1,683 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><style>HTML{margin:0 !important;border:none !important;}.dragdrop-handle{cursor:move;user-select:none;-khtml-user-select:none;-moz-user-select:none;}.GBVTBU-BB{zoom:1;}.dragdrop-dragging{zoom:normal;}.GBVTBU-BI{border:1px dashed #1e90ff;margin:0 !important;zoom:1;z-index:100;}.dragdrop-flow-panel-positioner{color:#1e90ff;display:inline;text-align:center;vertical-align:middle;}.dragdrop-proxy{background-color:#7af;}.dragdrop-selected,.dragdrop-dragging,.dragdrop-proxy{filter:alpha(opacity \= 30);opacity:0.3;}.dragdrop-movable-panel{z-index:200;margin:0 !important;border:none !important;}</style>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>PrediTar: Home</title>
+<!--<meta name="generator" content="WYSIWYG Web Builder 9 - http://www.wysiwygwebbuilder.com">-->
+<style type="text/css">
+div#container
+{
+   width: 960px;
+   position: relative;
+   margin-top: 0px;
+   margin-left: auto;
+   margin-right: auto;
+   text-align: left;
+}
+body
+{
+   text-align: center;
+   margin: 0;
+   background-color: #FFFFFF;
+   background-image: url(images/background.png);
+   background-attachment: fixed;
+   color: #000000;
+}
+</style>
+<link href="PrediTar:%20Home_files/jquery.css" rel="stylesheet" type="text/css">
+<link href="PrediTar:%20Home_files/wb.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+a
+{
+   color: #0000FF;
+   text-decoration: underline;
+}
+a:visited
+{
+   color: #800080;
+}
+a:active
+{
+   color: #FF0000;
+}
+a:hover
+{
+   color: #0000FF;
+   text-decoration: underline;
+}
+</style>
+<style type="text/css">
+#jQueryTabs1
+{
+   padding: 4px 4px 4px 4px;
+}
+#jQueryTabs1 .ui-tabs-nav
+{
+   font-family: Arial;
+   font-size: 16px;
+   padding: 4px 4px 0px 10px;
+}
+#jQueryTabs1 .ui-tabs-nav li
+{
+   font-weight: normal;
+   font-style: normal;
+   margin: 0px 2px -1px 0px;
+}
+#jQueryTabs1 .ui-tabs-nav li a
+{
+   padding: 8px 10px 8px 10px;
+}
+#wb_Form1
+{
+   background-color: #FFFFFF;
+   border: 0px #000000 solid;
+}
+#FileUpload1
+{
+   border: 1px #A9A9A9 solid;
+   background-color: #FFFFFF;
+   color: #000000;
+   font-family:Arial;
+   font-size: 16px;
+}
+#Prob
+{
+   border: 1px #A9A9A9 solid;
+   -moz-border-radius: 5px;
+   -webkit-border-radius: 5px;
+   border-radius: 5px;
+   background-color: #FFFFFF;
+   color :#000000;
+   font-family: Arial;
+   font-size: 16px;
+   text-align: left;
+   vertical-align: middle;
+}
+#Mode
+{
+   border: 1px #A9A9A9 solid;
+   -moz-border-radius: 5px;
+   -webkit-border-radius: 5px;
+   border-radius: 5px;
+   background-color: #FFFFFF;
+   color: #000000;
+   font-family: Arial;
+   font-size: 16px;
+}
+#wb_Text1 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: left;
+}
+#wb_Text1 div
+{
+   text-align: left;
+}
+#wb_Text1:hover
+{
+   -webkit-transform: rotateX(0deg);
+   -moz-transform: rotateX(0deg);
+   -ms-transform: rotateX(0deg);
+   transform: rotateX(0deg);
+   -webkit-transition: -webkit-transform 500ms linear 0ms;
+   -moz-transition: transform 500ms linear 0ms;
+   -ms-transition: transform 500ms linear 0ms;
+   transition: transform 500ms linear 0ms;
+}
+#wb_Text2 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: left;
+}
+#wb_Text2 div
+{
+   text-align: left;
+}
+#Button1
+{
+   border: 1px #008080 solid;
+   -moz-border-radius: 5px;
+   -webkit-border-radius: 5px;
+   border-radius: 5px;
+   background-color: #02A681;
+   color: #F0F0F0;
+   font-family: Arial;
+   font-size: 19px;
+}
+#wb_Text3 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: left;
+}
+#wb_Text3 div
+{
+   text-align: left;
+}
+#wb_Text4 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: left;
+}
+#wb_Text4 div
+{
+   text-align: left;
+}
+#JobName
+{
+   border: 1px #A9A9A9 solid;
+   -moz-border-radius: 5px;
+   -webkit-border-radius: 5px;
+   border-radius: 5px;
+   background-color: #FFFFFF;
+   color :#000000;
+   font-family: Arial;
+   font-size: 16px;
+   text-align: left;
+   vertical-align: middle;
+}
+#Email
+{
+   border: 1px #A9A9A9 solid;
+   -moz-border-radius: 5px;
+   -webkit-border-radius: 5px;
+   border-radius: 5px;
+   background-color: #FFFFFF;
+   color :#000000;
+   font-family: Arial;
+   font-size: 16px;
+   text-align: left;
+   vertical-align: middle;
+}
+#wb_Text5 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: left;
+}
+#wb_Text5 div
+{
+   text-align: left;
+}
+#wb_Form2
+{
+   background-color: #FAFAFA;
+   border: 0px #000000 solid;
+}
+#TextArea1
+{
+   border: 1px #A9A9A9 solid;
+   background-color: #FFFFFF;
+   color :#000000;
+   font-family: Arial;
+   font-size: 13px;
+   text-align: left;
+   resize: none;
+}
+#Button2
+{
+   border: 1px #A9A9A9 solid;
+   background-color: #F0F0F0;
+   color: #000000;
+   font-family: Arial;
+   font-size: 13px;
+}
+#wb_Form3
+{
+   background-color: #FAFAFA;
+   border: 0px #000000 solid;
+}
+#Button3
+{
+   border: 1px #A9A9A9 solid;
+   background-color: #F0F0F0;
+   color: #000000;
+   font-family: Arial;
+   font-size: 13px;
+}
+#Button4
+{
+   border: 1px #008080 solid;
+   -moz-border-radius: 5px;
+   -webkit-border-radius: 5px;
+   border-radius: 5px;
+   background-color: #0073EA;
+   color: #F0F0F0;
+   font-family: Arial;
+   font-size: 19px;
+}
+#Image1
+{
+   border: 0px #000000 solid;
+}
+#wb_Text6 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: left;
+}
+#wb_Text6 div
+{
+   text-align: left;
+}
+#Image3
+{
+   border: 0px #000000 solid;
+}
+#Image2
+{
+   border: 0px #000000 solid;
+}
+#wb_Text7 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: left;
+}
+#wb_Text7 div
+{
+   text-align: left;
+}
+#wb_CssMenu1
+{
+   border: 0px #02A681 solid;
+   background-color: transparent;
+}
+#wb_CssMenu1 ul
+{
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   position: relative;
+   display: inline-block;
+}
+#wb_CssMenu1 li
+{
+   float: left;
+   margin: 0;
+   padding: 0px 10px 0px 0px;
+   width: 100px;
+}
+#wb_CssMenu1 a
+{
+   display: block;
+   float: left;
+   color: #FFFFFF;
+   border: 0px #C0C0C0 none;
+   background-color: #02A681;
+   background-image: none;
+   font-family: Arial;
+   font-size: 16px;
+   font-weight: normal;
+   font-style: normal;
+   text-decoration: none;
+   width: 88px;
+   height: 33px;
+   padding: 0px 5px 0px 5px;
+   vertical-align: middle;
+   line-height: 33px;
+   text-align: center;
+}
+#wb_CssMenu1 li:hover a, #wb_CssMenu1 a:hover
+{
+   color: #FFFFFF;
+   background-color: #9BBEDB;
+   background-image: none;
+   border: 1px #C0C0C0 none;
+}
+#wb_CssMenu1 li.firstmain
+{
+   padding-left: 0px;
+}
+#wb_CssMenu1 li.lastmain
+{
+   padding-right: 0px;
+}
+#wb_CssMenu1 br
+{
+   clear: both;
+   font-size: 1px;
+   height: 0;
+   line-height: 0px;
+}
+</style>
+<script type="text/javascript" src="PrediTar:%20Home_files/jquery-1.js"></script>
+<script type="text/javascript" src="PrediTar:%20Home_files/jquery.js"></script>
+<script type="text/javascript" src="PrediTar:%20Home_files/jquery_003.js"></script>
+<script type="text/javascript" src="PrediTar:%20Home_files/jquery_005.js"></script>
+<script type="text/javascript" src="PrediTar:%20Home_files/jquery_004.js"></script>
+<script type="text/javascript" src="PrediTar:%20Home_files/jquery_002.js"></script>
+<script type="text/javascript" src="PrediTar:%20Home_files/wb.js"></script>
+<script type="text/javascript">
+function ValidatePredTar(theForm)
+{
+   var regexp;
+   if (theForm.Prob.value == "")
+   {
+      alert("Please enter a value for the \"Prob\" field.");
+      theForm.Prob.focus();
+      return false;
+   }
+   return true;
+}
+</script>
+<script type="text/javascript">
+$(document).ready(function()
+{
+   var jQueryTabs1Opts =
+   {
+      show: true,
+      event: 'click',
+      collapsible: false
+   };
+   $("#jQueryTabs1").tabs(jQueryTabs1Opts);
+   $("#Form1").submit(function(event)
+   {
+      var isValid = $.validate.form(this);
+      return isValid;
+   });
+   $("#JobName").validate(
+   {
+      required: true,
+      type: 'custom',
+      param: /^[A-Za-zÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿ0-9-]*$/,
+      color_text: '#FFFFFF',
+      color_hint: '#C4FFC4',
+      color_error: '#FF6347',
+      opacity: 0.70,
+      color_border: '#FF6347',
+      nohint: true,
+      font_family: 'Arial',
+      font_size: '11px',
+      position: 'topright',
+      offsetx: 0,
+      offsety: 0,
+      bubble_class: 'bubbleleft',
+      effect: 'fade',
+      error_text: ''
+   });
+});
+</script>
+<!-- Insert Google Analystics code here -->
+<link href="PrediTar:%20Home_files/jsa.css" rel="stylesheet"><link href="PrediTar:%20Home_files/chrome.css" rel="stylesheet"><link href="PrediTar:%20Home_files/mosaic.css" rel="stylesheet"></head>
+<body>
+<div id="container">
+<div class="ui-tabs ui-widget ui-widget-content ui-corner-all" id="jQueryTabs1" style="position:absolute;left:79px;top:209px;width:810px;height:372px;z-index:35;">
+<ul role="tablist" class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+<li aria-selected="true" aria-labelledby="ui-id-1" aria-controls="jquerytabs1-page-0" tabindex="0" role="tab" class="ui-state-default ui-corner-top ui-tabs-active ui-state-active"><a id="ui-id-1" tabindex="-1" role="presentation" class="ui-tabs-anchor" href="#jquerytabs1-page-0"><span>File Upload</span></a></li>
+
+
+</ul>
+<div aria-hidden="false" aria-expanded="true" role="tabpanel" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-labelledby="ui-id-1" style="height: 330px; overflow: auto; padding: 0px;" id="jquerytabs1-page-0">
+<div id="wb_Form1" style="position:absolute;left:13px;top:50px;width:795px;height:319px;z-index:12;">
+<form name="PredTar" method="post" action="./Step0.php" enctype="multipart/form-data" id="Form1" onsubmit="return ValidatePredTar(this)">
+<input id="FileUpload1" style="position:absolute;left:173px;top:83px;width:268px;height:28px;z-index:0;" name="FileUpload1" required="required" type="file">
+
+<select name="Mode" size="1" id="Mode" style="position:absolute;left:174px;top:143px;width:270px;height:30px;z-index:2;">
+<option value="2d">2D</option>
+<option selected="selected" value="3d">3D</option>
+<option value="combo">2D+3D</option>
+</select>
+<div id="wb_Text1" style="position:absolute;left:39px;top:143px;width:124px;height:19px;z-index:3;text-align:left;">
+<span style="color:#000000;font-family:Arial;font-size:16px;">Type of Lipid</span></div>
+
+<div id="wb_Text3" style="position:absolute;left:39px;top:83px;width:124px;height:19px;z-index:5;text-align:left;">
+<span style="color:#000000;font-family:Arial;font-size:16px;">Input File</span></div>
+<input style="position:absolute;left:174px;top:200px;width:268px;height:28px;line-height:28px;z-index:6;" id="Email" name="Email" required="required" type="email">
+<div id="wb_Text5" style="position: absolute; left: 39px; top: 200px; width: 124px; height: 19px; z-index: 7; text-align: left;">
+<span style="color:#000000;font-family:Arial;font-size:16px;">Email ID</span></div>
+<div id="wb_Text4" style="position:absolute;left:39px;top:23px;width:124px;height:19px;z-index:8;text-align:left;">
+<span style="color:#000000;font-family:Arial;font-size:16px;">Job Name</span></div>
+<input id="JobName" style="position:absolute;left:174px;top:23px;width:268px;height:28px;line-height:28px;z-index:9;" name="JobName" autocomplete="off" type="text">
+<input id="Button1" name="Reset" value="Reset" style="position:absolute;left:536px;top:254px;width:83px;height:46px;z-index:10;" type="reset">
+<input id="Button4" name="Submit" value="Submit" style="position:absolute;left:637px;top:254px;width:128px;height:46px;z-index:11;" type="submit">
+</form>
+</div>
+</div>
+<div aria-hidden="true" aria-expanded="false" role="tabpanel" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-labelledby="ui-id-2" style="height: 330px; overflow: auto; padding: 0px; display: none;" id="jquerytabs1-page-1">
+<div id="wb_Form2" style="position:absolute;left:121px;top:101px;width:483px;height:139px;z-index:15;">
+<form name="Form2" method="post" action="./Khaled.php" enctype="multipart/form-data" id="Form2">
+<textarea name="TextArea1" id="TextArea1" style="position:absolute;left:91px;top:55px;width:270px;height:74px;z-index:13;" rows="3" cols="38"></textarea>
+<input id="Button2" name="" value="Submit" style="position:absolute;left:374px;top:79px;width:96px;height:25px;z-index:14;" type="submit">
+</form>
+</div>
+</div>
+<div aria-hidden="true" aria-expanded="false" role="tabpanel" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-labelledby="ui-id-3" style="height: 330px; overflow: auto; padding: 0px; display: none;" id="jquerytabs1-page-2">
+<div id="wb_Form3" style="position:absolute;left:12px;top:54px;width:789px;height:300px;z-index:18;">
+<form name="Form3" method="post" action="./Khaled.php" enctype="multipart/form-data" id="Form3">
+<input id="Button3" name="" value="Submit" style="position:absolute;left:651px;top:270px;width:96px;height:25px;z-index:16;" type="submit">
+<div id="Html1" style="position:absolute;left:9px;top:15px;width:770px;height:240px;z-index:17">
+
+
+
+
+<script type="text/javascript" language="javascript" src="PrediTar:%20Home_files/jsme.js"></script><script defer="defer">jsme.onInjectionDone('jsme')</script>
+
+<script>
+    //this function will be called after the JavaScriptApplet code has been loaded.
+    function jsmeOnLoad() {
+        jsmeApplet = new JSApplet.JSME("jsme_container", "750px", "240px");
+   }
+   	function getSmiles() {
+		var data = document.JME.smiles();
+		document.getElementById("jme_output").value = data;
+	}
+</script>
+
+
+
+<div id="jsme_container"><div style="padding: 0px; outline: 0px none; text-align: left; width: 750px; height: 240px;" tabindex="0"><input style="opacity: 0; height: 1px; width: 1px; z-index: -1; overflow: hidden; position: absolute;" role="presentation" tabindex="-1" type="text"><div class="jsa-resetDiv" style="position: relative; overflow: hidden; width: 100%; height: 100%;"><div style="overflow: hidden; position: absolute; width: 0px; height: 0px; left: 0px; top: 0px;" class="jsa-resetDiv"></div><div style="overflow: hidden; position: absolute; width: 1px; height: 1px; left: 24px; top: 49px;" class="jsa-resetDiv"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="0" height="0"><g transform="scale(0.03333333333333333)">
+<rect x="0" y="0" height="-2190" width="-720" stroke="none" fill="rgb(255,255,255)"></rect>
+<line x1="-750" y1="0" x2="-750" y2="-2220" stroke="rgb(64,64,64)" stroke-width="30"></line>
+</g></svg></div><div style="overflow: hidden; position: absolute; width: 0px; height: 49px; left: 0px; top: 0px;" class="jsa-resetDiv"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="0" height="0"><g transform="scale(0.03333333333333333)">
+<rect x="0" y="0" height="1470" width="0" stroke="none" fill="rgb(192,192,192)"></rect>
+<rect x="10500" y="0" height="1440" width="-10530" fill="none" stroke="rgb(64,64,64)" stroke-width="30"></rect>
+<rect x="0" y="0" height="720" width="720" stroke="none" fill="rgb(192,192,192)"></rect>
+<rect x="0" y="0" height="690" width="690" fill="none" stroke="rgb(64,64,64)" stroke-width="30"></rect>
+<ellipse cx="360" cy="360" rx="270" ry="270" stroke="none" fill="rgb(255,255,0)"></ellipse>
+<ellipse cx="360" cy="360" rx="270" ry="270" fill="none" stroke="black" stroke-width="30"></ellipse>
+<g fill="none" stroke="black" stroke-width="30"><path d="M 507.4473679720185 463.2437585431883 A 180 180 0 0 1 212.55263202798145 463.2437585431883"></path></g>
+<rect x="270" y="270" height="120" width="60" stroke="none" fill="black"></rect>
+<rect x="420" y="270" height="120" width="60" stroke="none" fill="black"></rect>
+<rect x="0" y="750" height="720" width="720" stroke="none" fill="rgb(192,192,192)"></rect>
+<rect x="0" y="750" height="690" width="690" fill="none" stroke="rgb(64,64,64)" stroke-width="30"></rect>
+<line x1="180" y1="1110" x2="540" y2="1170" stroke="black" stroke-width="30"></line>
+<line x1="180" y1="1110" x2="540" y2="1050" stroke="black" stroke-width="30"></line>
+<line x1="540" y1="1170" x2="540" y2="1050" stroke="black" stroke-width="30"></line>
+<rect x="750" y="0" height="720" width="720" stroke="none" fill="rgb(192,192,192)"></rect>
+<rect x="750" y="0" height="690" width="690" fill="none" stroke="rgb(64,64,64)" stroke-width="30"></rect>
+<rect x="840" y="150" height="390" width="510" stroke="none" fill="rgb(255,255,255)"></rect>
+<rect x="840" y="150" height="390" width="510" fill="none" stroke="black" stroke-width="30"></rect>
+<rect x="750" y="750" height="720" width="720" stroke="none" fill="rgb(134,134,134)"></rect>
+<rect x="750" y="750" height="690" width="690" fill="none" stroke="rgb(64,64,64)" stroke-width="30"></rect>
+<line x1="930" y1="1110" x2="1290" y2="1110" stroke="black" stroke-width="30"></line>
+<rect x="1500" y="0" height="720" width="720" stroke="none" fill="rgb(192,192,192)"></rect>
+<rect x="1500" y="0" height="690" width="690" fill="none" stroke="rgb(64,64,64)" stroke-width="30"></rect>
+<rect x="1500" y="750" height="720" width="720" stroke="none" fill="rgb(192,192,192)"></rect>
+<rect x="1500" y="750" height="690" width="690" fill="none" stroke="rgb(64,64,64)" stroke-width="30"></rect>
+<line x1="1680" y1="1050" x2="2040" y2="1050" stroke="black" stroke-width="30"></line>
+<line x1="1680" y1="1170" x2="2040" y2="1170" stroke="black" stroke-width="30"></line>
+<rect x="2250" y="0" height="720" width="720" stroke="none" fill="rgb(192,192,192)"></rect>
+<rect x="2250" y="0" height="690" width="690" fill="none" stroke="rgb(64,64,64)" stroke-width="30"></rect>
+<line x1="2460" y1="210" x2="2760" y2="510" stroke="rgb(255,0,0)" stroke-width="30"></line>
+<line x1="2490" y1="210" x2="2790" y2="510" stroke="rgb(255,0,0)" stroke-width="30"></line>
+<line x1="2460" y1="510" x2="2760" y2="210" stroke="rgb(255,0,0)" stroke-width="30"></line>
+<line x1="2490" y1="510" x2="2790" y2="210" stroke="rgb(255,0,0)" stroke-width="30"></line>
+<rect x="2250" y="750" height="720" width="720" stroke="none" fill="rgb(192,192,192)"></rect>
+<rect x="2250" y="750" height="690" width="690" fill="none" stroke="rgb(64,64,64)" stroke-width="30"></rect>
+<line x1="2430" y1="1110" x2="2790" y2="1110" stroke="black" stroke-width="30"></line>
+<line x1="2430" y1="1020" x2="2790" y2="1020" stroke="black" stroke-width="30"></line>
+<line x1="2430" y1="1200" x2="2790" y2="1200" stroke="black" stroke-width="30"></line>
+<rect x="3000" y="0" height="720" width="720" stroke="none" fill="rgb(192,192,192)"></rect>
+<rect x="3000" y="0" height="690" width="690" fill="none" stroke="rgb(64,64,64)" stroke-width="30"></rect>
+<rect x="3000" y="750" height="720" width="720" stroke="none" fill="rgb(192,192,192)"></rect>
+<rect x="3000" y="750" height="690" width="690" fill="none" stroke="rgb(64,64,64)" stroke-width="30"></rect>
+<line x1="3090" y1="1170" x2="3270" y2="1050" stroke="black" stroke-width="30"></line>
+<line x1="3270" y1="1050" x2="3450" y2="1170" stroke="black" stroke-width="30"></line>
+<line x1="3450" y1="1170" x2="3630" y2="1050" stroke="black" stroke-width="30"></line>
+<rect x="3750" y="0" height="720" width="720" stroke="none" fill="rgb(192,192,192)"></rect>
+<rect x="3750" y="0" height="690" width="690" fill="none" stroke="rgb(64,64,64)" stroke-width="30"></rect>
+<line x1="3960" y1="210" x2="4260" y2="510" stroke="rgb(255,0,0)" stroke-width="30"></line>
+<line x1="3990" y1="210" x2="4290" y2="510" stroke="rgb(255,0,0)" stroke-width="30"></line>
+<line x1="3960" y1="510" x2="4260" y2="210" stroke="rgb(255,0,0)" stroke-width="30"></line>
+<line x1="3990" y1="510" x2="4290" y2="210" stroke="rgb(255,0,0)" stroke-width="30"></line>
+<line x1="3930" y1="360" x2="4110" y2="360" stroke="black" stroke-width="30"></line>
+<text x="4155" y="525" font-size="390px" font-family="Helvetica" fill="black">R</text>
+<rect x="3750" y="750" height="720" width="720" stroke="none" fill="rgb(192,192,192)"></rect>
+<rect x="3750" y="750" height="690" width="690" fill="none" stroke="rgb(64,64,64)" stroke-width="30"></rect>
+<polygon points="3876,1305 4344,1305 4110,900" fill="none" stroke="black" stroke-width="30"></polygon>
+<rect x="4500" y="0" height="720" width="720" stroke="none" fill="rgb(192,192,192)"></rect>
+<rect x="4500" y="0" height="690" width="690" fill="none" stroke="rgb(64,64,64)" stroke-width="30"></rect>
+<rect x="4500" y="750" height="720" width="720" stroke="none" fill="rgb(192,192,192)"></rect>
+<rect x="4500" y="750" height="690" width="690" fill="none" stroke="rgb(64,64,64)" stroke-width="30"></rect>
+<polygon points="4669,1301 5051,1301 5051,919 4669,919" fill="none" stroke="black" stroke-width="30"></polygon>
+<rect x="5250" y="0" height="720" width="720" stroke="none" fill="rgb(192,192,192)"></rect>
+<rect x="5250" y="0" height="690" width="690" fill="none" stroke="rgb(64,64,64)" stroke-width="30"></rect>
+<line x1="5430" y1="540" x2="5790" y2="180" stroke="black" stroke-width="30"></line>
+<line x1="5610" y1="480" x2="5790" y2="480" stroke="black" stroke-width="30"></line>
+<line x1="5430" y1="240" x2="5610" y2="240" stroke="black" stroke-width="30"></line>
+<line x1="5520" y1="150" x2="5520" y2="330" stroke="black" stroke-width="30"></line>
+<rect x="5250" y="750" height="720" width="720" stroke="none" fill="rgb(192,192,192)"></rect>
+<rect x="5250" y="750" height="690" width="690" fill="none" stroke="rgb(64,64,64)" stroke-width="30"></rect>
+<polygon points="5451,1328 5769,1328 5867,1027 5610,840 5353,1027" fill="none" stroke="black" stroke-width="30"></polygon>
+<rect x="6000" y="0" height="720" width="720" stroke="none" fill="rgb(192,192,192)"></rect>
+<rect x="6000" y="0" height="690" width="690" fill="none" stroke="rgb(64,64,64)" stroke-width="30"></rect>
+<rect x="6000" y="750" height="720" width="720" stroke="none" fill="rgb(192,192,192)"></rect>
+<rect x="6000" y="750" height="690" width="690" fill="none" stroke="rgb(64,64,64)" stroke-width="30"></rect>
+<polygon points="6225,1344 6495,1344 6630,1110 6495,876 6225,876 6090,1110" fill="none" stroke="black" stroke-width="30"></polygon>
+<line x1="6270" y1="1266" x2="6450" y2="1266" stroke="black" stroke-width="30"></line>
+<line x1="6540" y1="1110" x2="6450" y2="954" stroke="black" stroke-width="30"></line>
+<line x1="6270" y1="954" x2="6180" y2="1110" stroke="black" stroke-width="30"></line>
+<rect x="6750" y="0" height="720" width="720" stroke="none" fill="rgb(192,192,192)"></rect>
+<rect x="6750" y="0" height="690" width="690" fill="none" stroke="rgb(64,64,64)" stroke-width="30"></rect>
+<line x1="6810" y1="300" x2="6900" y2="480" stroke="black" stroke-width="30"></line>
+<line x1="6990" y1="300" x2="6900" y2="480" stroke="black" stroke-width="30"></line>
+<line x1="6900" y1="345" x2="6900" y2="480" stroke="black" stroke-width="30"></line>
+<g fill="none" stroke="black" stroke-width="30"><path d="M 7125 630 A 225 262.5 0 1 0 6900 367.4999999999999"></path></g>
+<rect x="6750" y="750" height="720" width="720" stroke="none" fill="rgb(192,192,192)"></rect>
+<rect x="6750" y="750" height="690" width="690" fill="none" stroke="rgb(64,64,64)" stroke-width="30"></rect>
+<polygon points="6975,1344 7245,1344 7380,1110 7245,876 6975,876 6840,1110" fill="none" stroke="black" stroke-width="30"></polygon>
+<rect x="7500" y="0" height="720" width="720" stroke="none" fill="rgb(192,192,192)"></rect>
+<rect x="7500" y="0" height="690" width="690" fill="none" stroke="rgb(64,64,64)" stroke-width="30"></rect>
+<line x1="8160" y1="300" x2="8070" y2="480" stroke="black" stroke-width="30"></line>
+<line x1="7980" y1="300" x2="8070" y2="480" stroke="black" stroke-width="30"></line>
+<line x1="8070" y1="345" x2="8070" y2="480" stroke="black" stroke-width="30"></line>
+<g fill="none" stroke="black" stroke-width="30"><path d="M 7845 630 A 225 262.5 0 1 1 8070 367.49999999999994"></path></g>
+<rect x="7500" y="750" height="720" width="720" stroke="none" fill="rgb(192,192,192)"></rect>
+<rect x="7500" y="750" height="690" width="690" fill="none" stroke="rgb(64,64,64)" stroke-width="30"></rect>
+<polygon points="7743,1353 7977,1353 8123,1170 8071,942 7860,840 7649,942 7597,1170" fill="none" stroke="black" stroke-width="30"></polygon>
+<rect x="8250" y="0" height="720" width="720" stroke="none" fill="rgb(192,192,192)"></rect>
+<rect x="8250" y="0" height="690" width="690" fill="none" stroke="rgb(64,64,64)" stroke-width="30"></rect>
+<line x1="8430" y1="540" x2="8610" y2="360" stroke="black" stroke-width="30"></line>
+<line x1="8610" y1="360" x2="8790" y2="540" stroke="black" stroke-width="30"></line>
+<line x1="8580" y1="540" x2="8550" y2="540" stroke="black" stroke-width="30"></line>
+<line x1="8640" y1="540" x2="8670" y2="540" stroke="black" stroke-width="30"></line>
+<line x1="8430" y1="180" x2="8610" y2="360" stroke="rgb(255,0,255)" stroke-width="30"></line>
+<line x1="8610" y1="360" x2="8790" y2="180" stroke="rgb(255,0,255)" stroke-width="30"></line>
+<line x1="8580" y1="180" x2="8550" y2="180" stroke="rgb(255,0,255)" stroke-width="30"></line>
+<line x1="8640" y1="180" x2="8670" y2="180" stroke="rgb(255,0,255)" stroke-width="30"></line>
+<rect x="8250" y="750" height="720" width="720" stroke="none" fill="rgb(192,192,192)"></rect>
+<rect x="8250" y="750" height="690" width="690" fill="none" stroke="rgb(64,64,64)" stroke-width="30"></rect>
+<polygon points="8507,1359 8713,1359 8859,1213 8859,1007 8713,861 8507,861 8361,1007 8361,1213" fill="none" stroke="black" stroke-width="30"></polygon>
+<rect x="9000" y="0" height="720" width="720" stroke="none" fill="rgb(192,192,192)"></rect>
+<rect x="9000" y="0" height="690" width="690" fill="none" stroke="rgb(64,64,64)" stroke-width="30"></rect>
+<rect x="9000" y="750" height="720" width="720" stroke="none" fill="rgb(192,192,192)"></rect>
+<rect x="9000" y="750" height="690" width="690" fill="none" stroke="rgb(64,64,64)" stroke-width="30"></rect>
+<text x="9090" y="1275" font-size="390px" font-family="Helvetica" fill="black">FG</text>
+<rect x="9750" y="0" height="720" width="720" stroke="none" fill="rgb(192,192,192)"></rect>
+<rect x="9750" y="0" height="690" width="690" fill="none" stroke="rgb(64,64,64)" stroke-width="30"></rect>
+<rect x="9870" y="120" height="480" width="480" stroke="none" fill="rgb(0,0,255)"></rect>
+<text x="10050" y="525" font-size="390px" font-family="Helvetica" font-weight="bold" fill="rgb(255,255,255)">i</text>
+<rect x="9750" y="750" height="720" width="720" stroke="none" fill="rgb(192,192,192)"></rect>
+<rect x="9750" y="750" height="690" width="690" fill="none" stroke="rgb(64,64,64)" stroke-width="30"></rect>
+</g></svg></div><div style="overflow: hidden; position: absolute; width: 24px; height: 1px; left: 0px; top: 49px;" class="jsa-resetDiv"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="0" height="0"><g transform="scale(0.03333333333333333)">
+<rect x="0" y="0" height="-1470" width="720" stroke="none" fill="rgb(192,192,192)"></rect>
+<line x1="0" y1="-1500" x2="720" y2="-1500" stroke="rgb(64,64,64)" stroke-width="30"></line>
+<line x1="0" y1="7560" x2="720" y2="7560" stroke="rgb(64,64,64)" stroke-width="30"></line>
+<line x1="0" y1="7560" x2="0" y2="-1470" stroke="rgb(64,64,64)" stroke-width="30"></line>
+<line x1="690" y1="7560" x2="690" y2="-2190" stroke="rgb(64,64,64)" stroke-width="30"></line>
+<rect x="0" y="60" height="720" width="720" stroke="none" fill="rgb(192,192,192)"></rect>
+<rect x="0" y="60" height="690" width="690" fill="none" stroke="rgb(64,64,64)" stroke-width="30"></rect>
+<text x="225" y="585" font-size="390px" font-family="Helvetica" font-weight="bold" fill="rgb(64,64,64)">C</text>
+<rect x="0" y="810" height="720" width="720" stroke="none" fill="rgb(192,192,192)"></rect>
+<rect x="0" y="810" height="690" width="690" fill="none" stroke="rgb(64,64,64)" stroke-width="30"></rect>
+<text x="225" y="1335" font-size="390px" font-family="Helvetica" font-weight="bold" fill="rgb(0,0,255)">N</text>
+<rect x="0" y="1560" height="720" width="720" stroke="none" fill="rgb(192,192,192)"></rect>
+<rect x="0" y="1560" height="690" width="690" fill="none" stroke="rgb(64,64,64)" stroke-width="30"></rect>
+<text x="210" y="2085" font-size="390px" font-family="Helvetica" font-weight="bold" fill="rgb(255,0,0)">O</text>
+<rect x="0" y="2310" height="720" width="720" stroke="none" fill="rgb(192,192,192)"></rect>
+<rect x="0" y="2310" height="690" width="690" fill="none" stroke="rgb(64,64,64)" stroke-width="30"></rect>
+<text x="225" y="2835" font-size="390px" font-family="Helvetica" font-weight="bold" fill="rgb(178,178,0)">S</text>
+<rect x="0" y="3060" height="720" width="720" stroke="none" fill="rgb(192,192,192)"></rect>
+<rect x="0" y="3060" height="690" width="690" fill="none" stroke="rgb(64,64,64)" stroke-width="30"></rect>
+<text x="240" y="3585" font-size="390px" font-family="Helvetica" font-weight="bold" fill="rgb(255,0,255)">F</text>
+<rect x="0" y="3810" height="720" width="720" stroke="none" fill="rgb(192,192,192)"></rect>
+<rect x="0" y="3810" height="690" width="690" fill="none" stroke="rgb(64,64,64)" stroke-width="30"></rect>
+<text x="165" y="4335" font-size="390px" font-family="Helvetica" font-weight="bold" fill="rgb(255,0,255)">Cl</text>
+<rect x="0" y="4560" height="720" width="720" stroke="none" fill="rgb(192,192,192)"></rect>
+<rect x="0" y="4560" height="690" width="690" fill="none" stroke="rgb(64,64,64)" stroke-width="30"></rect>
+<text x="150" y="5085" font-size="390px" font-family="Helvetica" font-weight="bold" fill="rgb(255,0,255)">Br</text>
+<rect x="0" y="5310" height="720" width="720" stroke="none" fill="rgb(192,192,192)"></rect>
+<rect x="0" y="5310" height="690" width="690" fill="none" stroke="rgb(64,64,64)" stroke-width="30"></rect>
+<text x="300" y="5835" font-size="390px" font-family="Helvetica" font-weight="bold" fill="rgb(255,0,255)">I</text>
+<rect x="0" y="6060" height="720" width="720" stroke="none" fill="rgb(192,192,192)"></rect>
+<rect x="0" y="6060" height="690" width="690" fill="none" stroke="rgb(64,64,64)" stroke-width="30"></rect>
+<text x="225" y="6585" font-size="390px" font-family="Helvetica" font-weight="bold" fill="rgb(255,200,0)">P</text>
+<rect x="0" y="6810" height="720" width="720" stroke="none" fill="rgb(192,192,192)"></rect>
+<rect x="0" y="6810" height="690" width="690" fill="none" stroke="rgb(64,64,64)" stroke-width="30"></rect>
+<text x="225" y="7335" font-size="390px" font-family="Helvetica" font-weight="bold" fill="rgb(64,64,64)">X</text>
+</g></svg></div><div style="overflow: hidden; position: absolute; width: 1px; height: 24px; left: 24px; top: -24px;" class="jsa-resetDiv"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="0" height="0"><g transform="scale(0.03333333333333333)">
+<rect x="0" y="0" height="720" width="-720" stroke="none" fill="rgb(192,192,192)"></rect>
+<rect x="-30" y="0" height="690" width="-720" fill="none" stroke="rgb(64,64,64)" stroke-width="30"></rect>
+<text x="300" y="450" font-size="330px" font-family="Helvetica" fill="black">JSME Molecular Editor by Peter Ertl and Bruno Bienfait</text>
+</g></svg></div><img title="drag out MOL or RXN file" alt="drag out MOL or RXN file" class="gwt-Image" onload='this.__gwtLastUnhandledEvent="load";' src="PrediTar:%20Home_files/clear.gif" style="width: 29px; height: 16px; background: transparent url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAAAQCAYAAADqDXTRAAAAo0lEQVR42rWVQQ7AIAgEib33KV4b//+bfoK2h0ZUIKxGkz00AZdRoUTEqYrKKw6qtLmIuo/YZn9xy6ZyI29DGTNLq1KGTBdoVUqPwIqFFkLp0WKr4Pek5YCoGKVGe9xG3BeTu7zBFHiNMsc17YyH4517iUTnJQwsZWG60nNNwRwzrqaTtE2xDBijI9AchSip2gaO1CKDd7p/4LPRNlt/bYohpwcTQ8BgJmw3MgAAAABJRU5ErkJggg==&quot;) no-repeat scroll 0px 0px; position: absolute; left: -33px; top: -20px;" border="0"><div draggable="true" style="width: 29px; height: 16px; position: absolute; left: -33px; top: -20px; cursor: move;" title="drag out MOL or RXN file" tabindex="0"><input style="opacity: 0; height: 1px; width: 1px; z-index: -1; overflow: hidden; position: absolute;" role="presentation" tabindex="-1" type="text"></div></div></div></div>
+<button type="button" onclick="getSmiles();">Get smiles</button>
+
+
+</div>
+</form>
+</div>
+</div>
+</div>
+<div id="wb_Image1" style="position:absolute;left:0px;top:0px;width:960px;height:149px;z-index:36;">
+<img src="PrediTar:%20Home_files/header.png" id="Image1" alt="" style="width:960px;height:149px;"></div>
+<div id="wb_Shape1" style="position:absolute;left:0px;top:616px;width:960px;height:130px;filter:alpha(opacity=30);-moz-opacity:0.30;opacity:0.30;z-index:37;">
+<img src="PrediTar:%20Home_files/img0002.png" id="Shape1" alt="" style="border-width:0;width:960px;height:130px;"></div>
+<div id="wb_Text6" style="position:absolute;left:120px;top:690px;width:705px;height:48px;z-index:38;text-align:left;">
+<span style="color:#3E688E;font-family:Arial;font-size:13px;"><strong>Disclaimer:</strong>
+ The server is for research purposes only and the authors and their 
+organization are excluded from all liability for any costs, claims, 
+expenses, charges, losses, damages or penalties of any kind incurred 
+directly or indirectly arising from the use of this server.</span></div>
+<div id="wb_Image3" style="position:absolute;left:14px;top:624px;width:94px;height:114px;z-index:39;">
+<img src="PrediTar:%20Home_files/wwb_img4.jpg" id="Image3" alt="" style="width:94px;height:114px;"></div>
+<div id="wb_Image2" style="position:absolute;left:835px;top:623px;width:114px;height:114px;z-index:40;">
+<img src="PrediTar:%20Home_files/pi%2520logo.png" id="Image2" alt="" style="width:114px;height:114px;"></div>
+<div id="wb_Text7" style="position:absolute;left:120px;top:630px;width:705px;height:42px;z-index:41;text-align:left;">
+<span style="color:#3E688E;font-family:Arial;font-size:17px;"><strong>Department of Pharmacoinformatics<br>National Institute of Pharmaceutical Education and Research S.A.S. Nagar</strong></span></div>
+<div id="wb_CssMenu1" style="position:absolute;left:257px;top:156px;width:440px;height:35px;text-align:center;z-index:42;">
+<ul>
+<li class="firstmain"><a href="http://localhost/webMemProtMD/index.php" target="_self">Home</a>
+</li>
+<li><a href="http://localhost/webMemProtMD/help.php" target="_self">Help</a>
+</li>
+<li><a href="http://localhost/webMemProtMD/download.php" target="_self">Download</a>
+</li>
+<li><a href="http://localhost/webMemProtMD/contact.php" target="_self">Contact</a>
+</li>
+</ul>
+<br>
+</div>
+</div>
+
+
+<div style="top: 248px; left: 534px; opacity: 0.7; display: none;" id="JobName_bubble" class="bubbleleft"><div style="background-color: rgb(196, 255, 196); border-color: rgb(255, 99, 71); color: rgb(255, 255, 255); font-family: Arial; font-size: 11px; font-weight: normal; font-style: normal;" class="bubbleContent">undefined</div><div class="bubbleArrow"><div style="background-color: rgb(196, 255, 196); border-color: rgb(255, 99, 71);" class="line10"><!-- --></div><div style="background-color: rgb(196, 255, 196); border-color: rgb(255, 99, 71);" class="line9"><!-- --></div><div style="background-color: rgb(196, 255, 196); border-color: rgb(255, 99, 71);" class="line8"><!-- --></div><div style="background-color: rgb(196, 255, 196); border-color: rgb(255, 99, 71);" class="line7"><!-- --></div><div style="background-color: rgb(196, 255, 196); border-color: rgb(255, 99, 71);" class="line6"><!-- --></div><div style="background-color: rgb(196, 255, 196); border-color: rgb(255, 99, 71);" class="line5"><!-- --></div><div style="background-color: rgb(196, 255, 196); border-color: rgb(255, 99, 71);" class="line4"><!-- --></div><div style="background-color: rgb(196, 255, 196); border-color: rgb(255, 99, 71);" class="line3"><!-- --></div><div style="background-color: rgb(255, 99, 71); border-color: rgb(255, 99, 71);" class="line2"><!-- --></div><div style="background-color: rgb(255, 99, 71); border-color: rgb(255, 99, 71);" class="line1"><!-- --></div></div></div><iframe tabindex="-1" style="position: absolute; width: 0px; height: 0px; border: medium none;" id="jsme" src="javascript:''"></iframe></body></html>
