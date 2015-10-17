@@ -76,15 +76,26 @@ if(isset($_POST["Submit"]))
 }
 $input="./UserData/" . $f;
 
-$myResults = array();
+$myResults0 = array();
+$myResults1 = array();
 #$Script = "./preditar/preditar.py";
 //$command = "sudo " . "$Script" . ' -n ' . "$JobName" . ' -i ' . "$input" . ' -m ' . "$Mode" . ' -p ' . "$Probabilty" . ' -e ' . "$Email" . " 1>&1";
 #$command = "activate preditar; python " . "$Script" . ' -n ' . "$JobName" . ' -i ' . "$input" . ' -m ' . "$Mode" . ' -p ' . "$Probabilty" . ' -e ' . "$Email" . " 1>&1";
 $output1 = "./UserData/temp.pdb";
 
-$command1 = 'grep ATOM '   . "$input" .  ' > ' . "$output1" . " 1>&1";
-echo $command1;
-$myResults = shell_exec($command1);
+$command0 = 'grep ATOM '   . "$input" .  ' > ' . "$output1" . " 1>&1";
+#echo $command0;
+#echo getcwd() . "\n";
+$myResults0 = shell_exec($command0);
+#echo "Submited First Job";                      
+chdir('UserData');
+#echo getcwd() . "\n";
+$command1 = 'sudo /usr/bin/perl /home/nandekpl/Desktop/MemProtMDWorkshop/MemProtMD/AT2CG/at2cg.pl temp.pdb 1 popc';
+
+#echo $command1;
+
+$myResults1 = shell_exec($command1);
+#echo $myResults1;
 $_SESSION['Results']=$myResults;
 $_SESSION['Command']=$command;
 #echo "This is Command <br>";
@@ -98,11 +109,16 @@ echo "<br \>";
 echo "<br>";
 #//echo $mystring;
 //echo $_SESSION['Results'];
+chdir('../');
+#echo getcwd() . "\n";
+#echo "<br>";
 
-echo "<br>";
 /* Redirect browser */
-#header("Location: ./results.php");
+header("Location: ./results.php");
  
 /* Make sure that code below does not get executed when we redirect. */
 exit;
 ?>
+<html>
+ <a href="./UserData/MD/md.tpr">Download your TPR File</a> 
+</html>

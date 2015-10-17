@@ -1,0 +1,20 @@
+./UserData/temp.pdb
+
+Using the Gromos43a1 force field in directory gromos43a1.ff
+
+Reading temp-pdb/no-oxt.pdb...
+Read 644 atoms
+Analyzing pdb file
+Splitting chemical chains based on TER records or chain id changing.
+There are 1 chains and 0 blocks of water and 292 residues with 644 atoms
+
+  chain  #res #atoms
+  1 ' '   292    644  
+
+Reading residue database... (gromos43a1)
+Processing chain 1 (644 atoms, 292 residues)
+Membrane protein orientation using a knowledge-based statistical potential
+(c) Tim Nugent 2013
+Version 1.15
+
+Couldn't open file temp-pdb/cent.pdb

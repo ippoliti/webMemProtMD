@@ -1,0 +1,20 @@
+;
+;	File 'topol.top' was generated
+;	By user: nandekpl (1001)
+;	On host: mcm-Sony
+;	At date: Sat Oct 17 14:49:15 2015
+;
+;	This is a standalone topology file
+;
+;	Created by:
+;	GROMACS:      gmx pdb2gmx, VERSION 5.0.6
+;	Executable:   /home/nandekpl/software/gromacs-5.0.6/bin/gmx
+;	Library dir:  /home/nandekpl/software/gromacs-5.0.6/share/gromacs/top
+;	Command line:
+;	  gmx pdb2gmx -f temp-pdb/no-oxt.pdb -ignh -ff gromos43a1 -water spc
+;	Force field was read from the standard Gromacs share directory.
+;
+
+; Include forcefield parameters
+#include "gromos43a1.ff/forcefield.itp"
+

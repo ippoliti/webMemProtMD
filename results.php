@@ -225,13 +225,13 @@ echo $results;
 </td>
 </tr>
 <tr>
-<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;width:116px;height:22px;"><div><span style="color:#000000;font-family:Arial;font-size:13px;"><strong> Prediction mode</strong></span></div>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;width:116px;height:22px;"><div><span style="color:#000000;font-family:Arial;font-size:13px;"><strong> Type of Lipid</strong></span></div>
 </td>
 <td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;height:22px;"><div><span style="color:#000000;font-family:Arial;font-size:13px;"> <?php echo $Mode; ?> </span></div>
 </td>
 </tr>
 <tr>
-<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;width:116px;height:22px;"><div><span style="color:#000000;font-family:Arial;font-size:13px;"> <strong>Probability</strong></span></div>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;width:116px;height:22px;"><div><span style="color:#000000;font-family:Arial;font-size:13px;"> <strong>Your Name</strong></span></div>
 </td>
 <td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;height:22px;"><div><span style="color:#000000;font-family:Arial;font-size:13px;"> <?php echo $Probabilty; ?> </span></div>
 </td>
@@ -241,10 +241,16 @@ echo $results;
 </td>
 <td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;height:22px;"><div><span style="color:#000000;font-family:Arial;font-size:13px;"> <?php echo $Email; ?> </span></div>
 </td>
+<tr>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;width:116px;height:22px;"><div><span style="color:#000000;font-family:Arial;font-size:13px;"> <strong>Your TPR File Link</strong></span></div>
+</td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;height:22px;"><div><span style="color:#000000;font-family:Arial;font-size:13px;"> <a href="./UserData/MD/md.tpr">Download your TPR File</a>  </span></div>
+</td>
 </tr>
 </table>
 <div id="wb_Text1" style="position:absolute;left:357px;top:279px;width:250px;height:27px;z-index:4;text-align:left;">
-<span style="color:#000000;font-family:'Trebuchet MS';font-size:21px;">List of Predicted targets</span></div>
+<span style="color:#000000;font-family:'Trebuchet MS';font-size:21px;">Thank You.</br>
+Now next step is to run MD simulation using gromacs5.0 with this command: <br> <br>gmx mdrun -s md.tpr -deffnm md -v</span></div>
 <div id="wb_Text2" style="position:absolute;left:101px;top:187px;width:138px;height:23px;z-index:5;text-align:left;">
 <span style="color:#000000;font-family:'Trebuchet MS';font-size:17px;">Query Details</span></div>
 </div>
