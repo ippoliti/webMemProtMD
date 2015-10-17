@@ -1,0 +1,182 @@
+# -*- coding: utf-8 -*-
+
+
+import argparse
+__author__ = 'Naeem Shaikh'
+
+parser = argparse.ArgumentParser(description='PredTar is the script is to identify potential drug target fot given compound/s')
+parser.add_argument('-i', '--input', help='input filename containing query compound\s.', required=True)
+parser.add_argument('-o', '--output', help='Output filename initials (no need to specify extension, .csv is default)', default='predTar')
+parser.add_argument('-p', '--prob', help='probability cut-off for prediction', default=0.85, type=float)
+parser.add_argument('-m', '--mode', help='enter 3 for 3D classifier, 2 for 2D classifier and 1 for combo', default=3, type=int, choices=[3, 2, 1])
+
+args = parser.parse_args()
+
+def cutoff_limit(x):
+    if x < 0.5:
+        raise argparse.ArgumentTypeError("Minimum cutoff is 0.5")
+    if x > 0.95:
+        raise argparse.ArgumentTypeError("Minimum cutoff is 0.95")
+    return x
+
+mode = args.mode
+prob_cutoff = cutoff_limit(args.prob)
+inF = args.input
+
+import numpy as np
+from rdkit import Chem
+from rdkit.Chem import AllChem
+from rdkit import DataStructs
+
+if inF.endswith(".sdf") or inF.endswith(".sd"):
+    mols = [x for x in  Chem.SDMolSupplier(inF) if x is not None]
+if inF.endswith(".mol"):
+    mols = Chem.MolFromMolFile(inF)
+print 'no. compunds for target prediction : ', len(mols)		# 1502
+
+'''
+mols = [Chem.MolFromSmiles("CC1=C(C=CC(=C1)C2=NC3=C(S2)C=CC(=C3)F)N"),
+        Chem.MolFromSmiles("CC1=C(C(=C2C(=O)C=C(OC2=C1F)C3=CC(=C(C=C3)N)F)N)F")]
+mols[0].SetProp("_Name","NSC703786")
+mols[1].SetProp("_Name","NSC686288")
+'''
+
+with open("/home/user/naeem/scikit/new/dataset/Tpositive.txt", "r") as annotTP:
+    smiTP, scpdbTP, uniprotTP = zip(*(line.strip().split() for line in annotTP))
+    
+'''
+with open("/home/user/naeem/scikit/new/dataset/Tnegative.txt", "r") as annotTN:
+    smiTN, scpdbTN, uniprotTN = zip(*(line.strip().split() for line in annotTN))
+
+temp = np.asarray(smiTP + smiTN)
+newID = np.genfromtxt("/home/user/naeem/scikit/new/dataset/newIDC.txt", dtype=int)
+newID = newID.astype(np.bool)
+smiT = temp[newID]
+
+# check and remove compunds similar to training ligands
+fp_T = []   
+for smi in smiT:
+   m = Chem.MolFromSmiles(smi)
+   if m:
+      fp = AllChem.GetMorganFingerprint(m, 2)
+      fp_T.append(fp)
+
+from rdkit import DataStructs
+for m in mols:
+   fp = AllChem.GetMorganFingerprint(m, 2)
+   sim_T = DataStructs.BulkTanimotoSimilarity(fp, fp_T)
+   if max(sim_T) > 0.90:
+      mols.remove(m)
+print 'no. compunds different from training data', len(mols)		# 1446
+'''
+print 'loading required descriptors file and classifiers, it may takes half a min.'
+
+prodes3 = np.genfromtxt("/home/user/naeem/project/data/fuzcav-des.txt", delimiter=',')
+prolist3 = np.genfromtxt("/home/user/naeem/project/data/fuzcav-list.txt", dtype='S50')
+imp_feat = np.genfromtxt("/home/user/naeem/scikit/new/dataset/imp_feat.txt", dtype=int)
+
+prodes2 = np.genfromtxt("/home/user/naeem/project/data/profeat-des.txt", delimiter=',')
+prolist2 = np.genfromtxt("/home/user/naeem/project/data/profeat-list.txt", dtype='S10')
+imp_feat2 = np.genfromtxt("/home/user/naeem/scikit/new/dataset/imp_feat2.txt", dtype=int)
+
+from sklearn.externals import joblib
+minmax_scaler = joblib.load('/home/user/naeem/scikit/new/training-data/minmax_scaler.pkl')
+minmax_scaler2 = joblib.load('/home/user/naeem/scikit/new/training-data/minmax_scaler2.pkl')
+
+from sklearn.ensemble import RandomForestClassifier
+clfRF = joblib.load('/home/user/naeem/scikit/new/training-data/clfRF.pkl')
+clfRF2 = joblib.load('/home/user/naeem/scikit/new/training-data/clfRF2.pkl')
+
+def classify(item, fp_array, d):
+   if d == 3:
+      pos = np.where(prolist3 == item)
+      pd3 = prodes3[pos]
+      X0 = np.hstack((pd3[0], fp_array))
+      X1 = minmax_scaler.transform([X0])
+      X2 = X1[0][imp_feat]
+      y_0, y_1 = clfRF.predict_proba(X2)[0]
+   if d == 2:
+      pos = np.where(prolist2 == item)
+      pd2 = prodes2[pos]
+      X0 = np.hstack((pd2[0], fp_array))
+      X1 = minmax_scaler2.transform([X0])
+      X2 = X1[0][imp_feat2]
+      y_0, y_1 = clfRF2.predict_proba(X2)[0]
+   return y_1
+
+from collections import defaultdict
+d = defaultdict(lambda : defaultdict(dict))
+d2 = defaultdict(lambda : defaultdict(dict))
+
+from datetime import datetime
+print "Your job started at ", datetime.now()
+t1 = datetime.now()
+
+for m in mols:
+   #lig = m.GetProp('DATABASE_ID')
+   lig = m.GetProp('_Name')
+   print 'Compound_ID ', lig
+   fp = AllChem.GetMorganFingerprintAsBitVect(m, 2, nBits=1024)
+   fp_array = np.zeros((1,))
+   DataStructs.ConvertToNumpyArray(fp, fp_array)
+   if mode == 1:
+      for i, pdb in enumerate(scpdbTP):
+         prob = classify(pdb, fp_array, 3)
+         if prob >= prob_cutoff:            
+            uni = uniprotTP[i]
+            if uni in d2[lig]:
+               print ' ', uni, pdb, prob
+               d[lig][pdb] = prob
+            else:
+               prob2 = classify(uni, fp_array, 2)
+               if prob2 >= prob_cutoff:
+                  print ' ', uni, prob2, pdb, prob
+                  d[lig][pdb] = prob
+                  d2[lig][uni] = prob2
+   if mode == 2:
+      for i, uni in enumerate(uniprotTP):
+         prob2 = classify(uni, fp_array, 2)
+         if prob2 >= prob_cutoff:
+            print ' ', uni, prob2
+            d2[lig][uni] = prob2
+   if mode == 3:
+      for i, pdb in enumerate(scpdbTP[0:20]):
+         prob = classify(pdb, fp_array, 3)
+         if prob >= prob_cutoff:
+            print ' ', pdb, prob
+            d[lig][pdb] = prob
+            uni = uniprotTP[i]
+
+print "target predicted in : ", (datetime.now()-t1)
+
+import csv
+outF = args.output
+
+if mode != 2:
+   f1 = open(outF+"_3d.csv","wb")
+   writer = csv.writer(f1, delimiter=";", quotechar=' ')
+   title_line = ["lig_name", "PDB_id", "het_id", "probability"]
+   writer.writerow(title_line)
+   for k, v in d.iteritems():
+      writer.writerow([k])
+      for k1, v1 in v.iteritems():
+         pdb, het = k1.split('-')
+         link = 'https://www.rcsb.org/pdb/explore.do?structureId=%s' %(pdb)
+         writer.writerow(['', pdb, het, v1, link])
+   f1.close()
+   print "predicted targets are saved in %s_3d.csv file" %(outF)
+
+if mode < 3:
+   f2 = open(outF+"_2d.csv","wb")
+   writer = csv.writer(f2, delimiter=";", quotechar=' ')
+   title_line = ["lig_name", "uniprot_acc", "probability"]
+   writer.writerow(title_line)
+   for k, v in d2.iteritems():
+      writer.writerow([k])
+      for k1, v1 in v.iteritems():
+         writer.writerow(['', k1, v1])
+   f2.close()
+   print "predicted targets are saved in %s_2d.csv file" %(outF)
+
+annotTP.close()
+#annotTN.close()

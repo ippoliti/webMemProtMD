@@ -1,0 +1,123 @@
+//onsubmit="return ValidatePredTar(this)">
+
+
+function ValidatePredTar(theForm)
+//{
+   var regexp;
+   regexp = /^[-+]?\d*\.?\d*$/;
+   if (!regexp.test(theForm.Prob.value))
+   {
+      alert("Must be in between 0.50 - 0.95");
+      theForm.Prob.focus();
+      return false;
+   }
+   if (theForm.Prob.value == "")
+   {
+      alert("Must be in between 0.50 - 0.95");
+      theForm.Prob.focus();
+      return false;
+   }
+   return true;
+}
+
+
+
+<?php
+
+// start session
+
+session_start();
+
+
+if(isset($_POST["Submit"]))
+{
+
+//username assigning
+
+$_SESSION['JobName']=$_POST['JobName'];
+$JobName=$_SESSION['JobName'];
+
+$_SESSION['Prob']=$_POST['Prob'];
+$Probabilty=0.7;
+
+$_SESSION['Mode']=$_POST['Mode'];
+$Mode=$_SESSION['Mode'];
+
+$_SESSION['OutPut']=$_POST['OutPut'];
+$OutPut="./UserData/Results_" . $_SESSION['OutPut'].'.out';
+
+
+
+$_SESSION['Email']=$_POST['Email'];
+$Email=$_SESSION['Email'];
+
+
+//filename specifications
+
+$_SESSION["file"] = $_FILES["FileUpload1"]["name"];
+
+$FileNameParts = explode(".", $_SESSION["file"]);
+$_SESSION["IntermOutputINP"] = $FileNameParts[0]."ATOMS.txt";
+$_SESSION["OutputINP"] = $FileNameParts[0].".inp";
+}
+#echo "This is FIle___________";
+#echo $JobName;
+
+#echo "This is Probability_______";
+#echo $Mode;
+
+#$tmp = exec("python testscriptphp.py .$item");
+#echo "On Khaled.php\n";
+$K = "Allah";
+
+if(isset($_POST["Submit"]))
+{
+//In the above POST, the name of the submit button has to be used (This name is given while creating the button in WebBuilder8)
+  if ($_FILES["FileUpload1"]["error"] > 0)
+    {
+	//In the above $_FILES the first [] must have the name of the input i.e. FileUpload1 here (This name is given while creating the upload box in WebBuilder8)
+      //echo "Return Code: " . $_FILES["FileUpload1"]["error"] . "<br />";
+    }
+  else
+    {
+    //echo "Upload: " . $_FILES["FileUpload1"]["name"] . "<br />";
+    //echo "Type: " . $_FILES["FileUpload1"]["type"] . "<br />";
+    //echo "Size: " . ($_FILES["FileUpload1"]["size"] / 1024) . " Kb<br />";
+    //echo "Temp file: " . $_FILES["FileUpload1"]["tmp_name"] . "<br />";
+
+    if (file_exists($_SESSION["file"]))
+      {
+      //echo $_FILES["FileUpload1"]["name"] . " already exists. ";
+      }
+    else
+      {
+       move_uploaded_file($_FILES["FileUpload1"]["tmp_name"], "./UserData/" . $_SESSION["file"]);
+        // echo "Stored in: " . "./UserData/" . $_FILES["FileUpload1"]["name"];
+       $f=$_SESSION["file"];
+	}
+    }
+
+}
+$input="./UserData/" . $f;
+
+
+$python = "python";
+$Script = "./preditar/preditar.py";
+$command = "$python" .' '. "$Script" . ' -j ' . "$JobName" . ' -i ' . "$input" . ' -o ' . "$OutPut" .  ' -m ' . "$Mode" . ' -p ' . "$Probabilty" . " -e " . "$Email";
+
+echo "This is Command <br>";
+echo $command;
+$mystring = exec($command);
+
+#echo "Returned";
+echo "<br>";
+echo $mystring;
+
+
+echo "<br>";
+/* Redirect browser */
+#header("Location: ./step3.php");
+ 
+/* Make sure that code below does not get executed when we redirect. */
+exit;
+?>

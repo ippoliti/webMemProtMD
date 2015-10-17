@@ -1,0 +1,53 @@
+# -*- coding: utf-8 -*- 
+
+import numpy as np
+from sklearn import preprocessing
+from sklearn.externals import joblib
+
+newID = np.genfromtxt("/home/user/naeem/scikit/new/data_files/imp_files/newIDC.txt", dtype=int)
+newID = newID.astype(np.bool)
+
+with open("/home/user/naeem/scikit/new/dataset/Tpositive.txt", "r") as annotTP:
+    smiTP, scpdbTP, uniprotTP = zip(*(line.strip().split() for line in annotTP))
+    
+    
+########
+########## 2d
+
+data = joblib.load('/home/user/naeem/scikit/new/data_files/T2d.pkl')
+X = np.delete(data, 0, 1)
+
+minmax_scaler2 = preprocessing.MinMaxScaler()
+X1 = minmax_scaler2.fit_transform(X[newID])
+
+X2 = X1[0:3063]
+
+imp_feat2 = np.genfromtxt("/home/user/naeem/scikit/new/data_files/imp_files/imp_feat2.txt", dtype=int)
+imp_feat_pro2 = imp_feat2[imp_feat2<1080]
+imp_feat_lig2 = imp_feat2[imp_feat2>1080]-1080
+
+pro = X2[:, imp_feat_pro2]
+
+np.savetxt('/home/user/naeem/scikit/new/preditar/test/imp_feat_lig2.txt', imp_feat_lig2, fmt='%i')
+np.savetxt('/home/user/naeem/scikit/new/preditar/test/prodes2.txt', pro)
+
+########
+########## 3d
+
+data = joblib.load('/home/user/naeem/scikit/new/data_files/T3d.pkl')
+X = np.delete(data, 0, 1)
+
+minmax_scaler3 = preprocessing.MinMaxScaler()
+X1 = minmax_scaler3.fit_transform(X[newID])
+
+X2 = X1[0:3063]
+
+imp_feat = np.genfromtxt("/home/user/naeem/scikit/new/data_files/imp_files/imp_feat.txt", dtype=int)
+imp_feat_pro = imp_feat[imp_feat<4834]
+imp_feat_lig = imp_feat[imp_feat>4834]-4834
+
+pro = X2[:, imp_feat_pro]
+
+np.savetxt('/home/user/naeem/scikit/new/preditar/test/imp_feat_lig3.txt', imp_feat_lig, fmt='%i')
+np.savetxt('/home/user/naeem/scikit/new/preditar/test/prodes3.txt', pro)
+
